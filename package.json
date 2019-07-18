@@ -1,7 +1,7 @@
 {
-  "name": "blockchain",
+  "name": "blockchain-react",
   "version": "1.0.0",
-  "description": "A demo app for blockchain",
+  "description": "A client app for blockchain.info",
   "main": "index.js",
   "author": "Sidika CAY",
   "license": "MIT",

@@ -7,6 +7,7 @@
 import {Nav, Navbar} from "react-bootstrap";
 import React from "react";
 import {route} from "../../constants/app";
+import "./style.css";
 
 function NavigationBar(props) {
     return (
@@ -14,13 +15,13 @@ function NavigationBar(props) {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     <Nav.Link onClick={() => props.onNavigate(route.GET_LATEST)}>
-                        Latest Block
+                        Latest Blocks
                     </Nav.Link>
                 </Nav>
                 {props.showBack ? null :
-                    <Nav.Link className="" onClick={() => props.onNavigate(route.BACK)}>Back</Nav.Link>}
+                    <Nav.Link className="navigation-item" onClick={() => props.onNavigate(route.BACK)}>Back</Nav.Link>}
                 {props.showNext ? null :
-                    <Nav.Link className="" onClick={() => props.onNavigate(route.NEXT)}>Next</Nav.Link>}
+                    <Nav.Link className="navigation-item" onClick={() => props.onNavigate(route.NEXT)}>Next</Nav.Link>}
             </Navbar.Collapse>
         </Navbar>
     );

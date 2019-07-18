@@ -1,0 +1,7 @@
+.navigation-item {
+    color: #00baf4
+}
+
+.navigation-item:hover {
+    color: rgba(0,0,0,0.5);
+}

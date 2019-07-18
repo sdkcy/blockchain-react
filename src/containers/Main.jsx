@@ -72,7 +72,7 @@ class Main extends React.Component {
                 <NavigationBar onNavigate={this.onNavigationChange}
                                showNext={this.props.blocks.length <= this.state.page * BLOCK_PER_PAGE}
                                showBack={this.state.page < 2}/>
-                <BlocksList blocks={blocks} page={this.state.page} onNavigate={this.onNavigationChange}/>
+                <BlocksList blocks={blocks} onNavigate={this.onNavigationChange}/>
                 <BlockDetail data={this.props.detail} show={this.state.blockDetailModalShow}
                              onHide={() => this.onBlockDetailClose()}/>
             </div>
