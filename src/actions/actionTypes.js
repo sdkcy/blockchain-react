@@ -7,6 +7,7 @@
 export const blockActionTypes = {
     "GET_BLOCKS": "@@blockAction/GET_BLOCKS",
     "GET_BLOCK_DETAIL": "@@blockAction/GET_BLOCK_DETAIL",
-    "RESET": "@@blockAction/RESET"
+    "RESET": "@@blockAction/RESET",
+    "ADD_BLOCK": "@@blockAction/ADD_BLOCK"
 };
  

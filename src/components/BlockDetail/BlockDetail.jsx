@@ -75,7 +75,7 @@ class BlockDetail extends React.Component {
                         </Card.Body>
                         <Card.Footer>
                             {this.props.data.tx.length > this.state.page * TRANSACTION_PER_PAGE ?
-                                <Nav.Link className="footer mx-auto text-center"
+                                <Nav.Link className="footer mx-auto text-center hash"
                                           onClick={this.loadMore}>Load More</Nav.Link> : null}
                         </Card.Footer>
                     </Card>

@@ -23,6 +23,11 @@ export default function blockReducer(state = initialState, action) {
         case blockActionTypes.RESET:
             newState = Object.assign({}, state, {detail: null});
             break;
+        case blockActionTypes.ADD_BLOCK:
+            if (newState.list[0].height < action.payload.height) {
+                newState = Object.assign({}, state, {list: [action.payload].concat(newState.list)});
+            }
+            break;
         default :
             break;
     }
