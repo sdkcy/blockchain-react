@@ -37,8 +37,22 @@ export function getBlockDetail(hash) {
     });
 }
 
+export function addNewBlock(newBlock) {
+    const block = {
+        height: newBlock.height,
+        hash: newBlock.hash,
+        time: newBlock.time
+    };
+
+    return {
+        type: blockActionTypes.ADD_BLOCK,
+        payload: block
+    };
+}
+
 export function resetDetail() {
     return {
         type: blockActionTypes.RESET
-    }
+    };
 }
+

@@ -7,11 +7,12 @@
 import React from "react";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
-import {getBlockDetail, getBlocks, resetDetail} from "../actions/block";
+import {addNewBlock, getBlockDetail, getBlocks, resetDetail} from "../actions/block";
 import {BLOCK_PER_PAGE, route} from "../constants/app";
 import BlocksList from "../components/BlocksList/BlocksList";
 import NavigationBar from "../components/NavigationBar/NavigationBar";
 import BlockDetail from "../components/BlockDetail/BlockDetail";
+import {bcSocket} from "../websocket";
 
 class Main extends React.Component {
     constructor(props) {
@@ -26,6 +27,11 @@ class Main extends React.Component {
 
     componentDidMount() {
         this.props.getBlocks();
+        if (bcSocket) {
+            bcSocket.onmessage = (event) => {
+                this.props.addNewBlock(JSON.parse(event.data).x);
+            };
+        }
     }
 
     onNavigationChange(routeName, params) {
@@ -63,6 +69,12 @@ class Main extends React.Component {
         this.props.resetDetail();
     }
 
+    componentWillUnmount() {
+        if (bcSocket) {
+            bcSocket.close();
+        }
+    }
+
     render() {
         const allBlocks = this.props.blocks || [];
         const start = (this.state.page - 1) * BLOCK_PER_PAGE;
@@ -89,6 +101,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
+        addNewBlock: bindActionCreators(addNewBlock, dispatch),
         getBlocks: bindActionCreators(getBlocks, dispatch),
         getBlockDetail: bindActionCreators(getBlockDetail, dispatch),
         resetDetail: bindActionCreators(resetDetail, dispatch),
