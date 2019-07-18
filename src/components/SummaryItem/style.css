@@ -1,0 +1,9 @@
+.container {
+    color: #00b6ef;
+    font-size: 0.96rem;
+}
+
+.value {
+    position: absolute;
+    left: 180px;
+}

@@ -1,0 +1,12 @@
+.transaction-container {
+    background-color: #fafafa;
+    font-size: 0.96rem
+}
+
+.hash {
+    color: #00baf4
+}
+
+.transactions {
+    color: #00b509
+}

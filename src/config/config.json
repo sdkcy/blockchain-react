@@ -1,0 +1,5 @@
+{
+  "backend": {
+    "baseURL": "https://blockchain.info/"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "verbose": true,
+  "preset": "react",
+  "modulePaths": [
+    "<rootDir>/src/"
+  ],
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ]
+}
